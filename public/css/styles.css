@@ -1,0 +1,120 @@
+body{ padding: 0px; margin: 10px; background: #184a69 url(../images/blue_gradient.png) 0 0 repeat-x; font-family: Verdana; font-size: 100%; }
+h1{ float: left; padding: 10px; font-weight: bold; font-size: 1.5em; color: #ffffff; text-align: left; }
+h1 a{ color: #ffffff; text-decoration: none; }
+h2{ font-weight: bold; font-size: 1.76em; color: #462D44; }
+h3{ font-weight: bold; font-size: 1.5em; color: #462D44; }
+p{ font-size: 0.875em; color: #462D44; }
+ul{ padding: 0; }
+ul li{ font-size: 0.875em; color: #462D44; list-style: none; }
+img{ max-width: 100%; border: 1px solid #20809d; margin: 30px auto; display: block; }
+form{ width: 75%; margin: 0 auto; display: inline-block; }
+form#search-form{ height: 150px; }
+legend{ font-size: 1em; }
+button, input, select, textarea, label{ border: 1px solid #20809d; padding: 5px 2%; -webkit-border-radius: 5px; -moz-border-radius: 5px; text-decoration: none; margin-top: 10px; cursor: pointer; background: white; font-size: 0.876em; box-shadow: 3px 3px 3px #180000 }
+label{ margin-right: 2%; float: left; width: 30%; min-height: 22px; text-align: left; color: #000000; background: transparent; border: 0; padding-left: 0; box-shadow: 0 0 0; }
+input{ width: 96%; height: 22px; text-align: left; font-size: 0.875em; }
+input[type="search"]{ height: 34px; -webkit-appearance: none; }
+input[type="file"], input[type="checkbox"]{ background: transparent; border: 0; box-shadow: 0 0 0; }
+select{ width: 100%; height: 32px; text-align: left; font-size: 0.875em; }
+select.multiple{ height: 90px; font-size: 0.875em; }
+textarea{ width: 96%; font-size: 0.875em; font-family: Verdana; }
+button{ float: left; background: #157444; color: #ffffff; }
+p.error{ background-color: #A60000; padding: 10px 2%; color: #ffffff; width: 96%; }
+#main_body{ position: relative; margin: 10px auto; width: 95%; max-width: 1000px; }
+#banner{ float: left; position: relative; width: 100%; height: 119px; background-color: #184a69; border-radius: 10px 10px 0 0; box-shadow: 5px 5px 5px #180000; }
+.desc{ display: block; position: relative; font-size: 12px; }
+#banner ul{ margin: 0; padding-top: 24px; display: inline; float: right; width: 30%; }
+#banner li{ margin: 0; list-style-type: none; }
+a.button{ line-height: 28px; font-size: 1em; font-weight: bold; text-align: center; padding: 0 5px; margin: 0 auto 10px; background-color: #157444; border: 1px solid #20809d; border-radius: 8px; box-shadow: 3px 3px 3px #180000; height: 28px; width: 80%; display: block; }
+a.button:hover{ background-color: #074B28; color: #FFFFFF; }
+a.button:link, a.button:active, a.button:visited{ color: #ffffff; text-decoration: none; }
+nav ul{ box-shadow: 5px 5px 5px #180000; border: 0; margin: 0; padding: 0; float: left; width: 100%; height: 27px; position: relative; display: block; background-color: #184A69; border-color: #000000; border-top-width: 1px; border-style: solid; list-style: none; text-align: right; }
+nav li{ float: left; position: relative; width: 20%; text-align: left; }
+nav ul a{ color: #ffffff; text-decoration: none; text-align: center; display: block; padding: 5px 0 5px 0; text-indent: 5px; background: #184a69; font-weight: bold; }
+nav ul a:hover{ color: #000000; text-decoration: none; background-color: #cbd6de; }
+div#content{ float: left; position: relative; background: #cbd6de; border-radius: 0 0 10px 10px; box-shadow: 5px 5px 5px #180000; width: 88.2222222222%; padding: 5.8888888888%; min-height: 400px; }
+div#content form ul{ list-style-type: none; }
+div#content ul.content-navigation{ display: inline; float: left; margin: 0; padding: 0; width: 100%; }
+div#content ul.content-navigation li{ height: 68px; list-style-type: none; margin: 0 4.95% 40px; width: 40%; float: left; }
+div#content ul.content-navigation li a{ background: none repeat scroll 0 0 white; border: 1px solid #20809d; box-shadow: 10px 10px 5px #184A69; border-radius: 12px 12px 12px 12px; display: block; font-size: 1em; font-weight: bold; height: 46px; width: 100%; margin: 0; padding: 20px 0 0 0; text-align: center; text-decoration: none; color: #184A69; }
+div#content ul.content-navigation li a:hover{ background: none repeat scroll 0 0 #184A69; color: #ffffff; }
+div#content ul.content-navigation-icon li img{ border: 0; margin: 0 auto; display: block; }
+div#content ul.content-navigation-icon li a{ padding: 10px 0; }
+div#content ul.content-navigation-store{ display: inline; float: left; margin: 0 0 20px 0; padding: 0; width: 100%; }
+div#content ul.content-navigation-store li{ height: 250px; list-style-type: none; margin: 0 2.5% 40px; width: 20%; float: left; }
+div#content ul.content-navigation-store img{ height: 64px; border: 0;  }
+div#content ul.content-navigation-store h3{ margin-top: 0; font-size: 1.2em; }
+div#content ul.content-navigation-store p.address{ font-size: 0.9em; }
+div#content ul.content-navigation-store li div.container{ background: none repeat scroll 0 0 white; border: 1px solid #20809d; box-shadow: 10px 10px 5px #184A69; border-radius: 12px 12px 12px 12px; display: block; font-size: 1em; height: 100%; width: 90%; margin: 0; padding: 10px; text-align: center; color: #184A69; }
+div#content ul.content-navigation-store li div.container p{ width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+div#content ul.content-navigation-store li div.container a{ font-weight: bold; text-decoration: none; color: #184A69; }
+div#content ul.content-navigation-store li div.container a:hover{ text-decoration: underline; }
+div#content #sub-content{ float: left; width: 65%; margin-right: 1%; border-right: 1px dotted #20809d; min-height: 400px; }
+div#content #right-sidebar{ float: left; width: 32%; margin-left: 1%; }
+#footer{ margin: 13px 0 0 0; position: relative; float: left; width: 100%; height: 30px; background: #184a69; }
+#footer p#trade_mark{ float: left; position: relative; padding: 20px 0 0 20px; width: auto; color: #ffffff; text-align: left; font-size: 10px; }
+#footer p#designed{ float: right; position: relative; padding: 20px 20px 0 0; width: auto; color: #ffffff; text-align: right; font-size: 10px; }
+#footer a{ text-decoration: none; color: #ffffff; }
+.ui-widget{ background: #cbd6de; float: left; width: 100%; }
+.ui-accordion ul{ list-style-type: none; }
+.ui-tabs .ui-tabs-nav li a{ padding: 0.5em 0.5em; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected{ padding-bottom: 0; }
+div.tab-column{ width: 50%; float: left; }
+#location_map{ float: left; width: 100%; margin: 0 5px 10px 0; }
+#location_tweets{ float: right; width: 48%; margin: 0 0 10px 5px; min-height: 250px; }
+#location_tweets h3{ margin-top: 0; }
+#location_tweets p{ margin-top: 20px; }
+#location_tweets p a img{ border: 0; padding: 0 10px; }
+#location_content{ float: left; width: 100%; }
+#map_canvas img{ max-width: none; }
+#map_canvas{ width:98%; height:450px; border: 1px solid #20809d; }
+.static-map-container{ width: 75%; margin: 0 auto; }
+.static-map-search-container{ width: 50%; }
+label.ckedit{ display: none; }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	div#content ul.content-navigation li{ width: 90%; }
+	div#content ul.content-navigation-store li{ width: 45%; }
+	div#content #sub-content{ width: 100%; margin: 0; border: 0; }
+	div#content #right-sidebar{ width: 100%; margin: 0; }
+	#map_canvas{ width: 100%; }
+	div#content ul.content-navigation li{ width: 90%; }
+	div#content ul.content-navigation-store li{ width: 45%; }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+	div#content ul.content-navigation li{ width: 90%; }
+	div#content ul.content-navigation-store li{ width: 45%; }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+	div#content{ min-height: 900px };
+	div#content #sub-content{ min-height: 900px; }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+}
