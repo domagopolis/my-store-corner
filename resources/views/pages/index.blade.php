@@ -25,7 +25,7 @@
 			<img src="{{ asset('images/icons/generic-icon.png') }}" alt=""/>
 			@endif
 			<h3>{{ $store->trades->first()->title }}</h3>
-			<p class="store-name"><a href="{{ route('stores.show', ['country_slug' => $store->country->slug, 'state_slug' => $store->state->slug, 'postcode_slug' => $store->postcode->slug, 'trade_slug' => $store->trades->first()->slug, 'store_slug' => $store->slug]) }}">{{ $store->name }}</a></p>
+			<p class="store-name"><a href="{{ route('stores.show', ['country_slug' => $store->postcode->state->country->slug, 'state_slug' => $store->postcode->state->slug, 'postcode_slug' => $store->postcode->slug, 'trade_slug' => $store->trades->first()->slug, 'store_slug' => $store->slug]) }}">{{ $store->name }}</a></p>
 			<p class="address">{{ $store->address }}</p>
 		</div>
 	</li>
