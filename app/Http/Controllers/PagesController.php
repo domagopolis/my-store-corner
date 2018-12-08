@@ -11,7 +11,7 @@ class PagesController extends Controller
 {
     public function getIndex(){
 		$countries = Country::where('display_enabled', '=', 1)->orderBy('name')->get();
-		$stores = Store::limit(4)->get();
+		$stores = Store::inRandomOrder()->limit(4)->get();
 		
 		return view('pages.index')->withCountries($countries)->withStores($stores);
 	}

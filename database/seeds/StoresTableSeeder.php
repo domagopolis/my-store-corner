@@ -11,8 +11,8 @@ class StoresTableSeeder extends Seeder
      */
 	public function run()
 	{
-		factory(App\Store::class, 100)->create()->each(function($wps) {
-            ;
+		factory(App\Store::class, 100)->create()->each(function($s) {
+            $s->trades()->sync(App\Trade::inRandomOrder()->limit(3)->get());
         });
 	}
 }
