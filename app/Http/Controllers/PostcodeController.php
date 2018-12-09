@@ -53,7 +53,7 @@ class PostcodeController extends Controller
     {
         $country = Country::where('slug', '=', $country_slug)->first();
         $state = State::where('slug', '=', $state_slug)->where('country_id', '=', $country->id)->first();
-        $postcode = Postcode::where('slug', '=', $postcode_slug)->where('country_id', '=', $country->id)->where('state_id', '=', $state->id)->first();
+        $postcode = Postcode::where('slug', '=', $postcode_slug)->where('state_id', '=', $state->id)->first();
         $trades = Trade::orderBy('title')->get();
 
         return view('postcodes.show')->withPostcode($postcode)->withTrades($trades);

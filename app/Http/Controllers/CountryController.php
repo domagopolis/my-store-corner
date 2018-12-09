@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Country;
+use App\Store;
 
 class CountryController extends Controller
 {
@@ -47,8 +48,9 @@ class CountryController extends Controller
     public function show($country_slug)
     {
         $country = Country::where('slug', '=', $country_slug)->first();
+        $stores = Store::inRandomOrder()->limit(4)->get();
 
-        return view('countries.show')->withCountry($country);
+        return view('countries.show')->withCountry($country)->withStores($stores);
     }
 
     /**
