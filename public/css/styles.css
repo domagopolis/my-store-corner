@@ -1,7 +1,7 @@
 body{ padding: 0px; margin: 10px; background: #184a69 url(../images/blue_gradient.png) 0 0 repeat-x; font-family: Verdana; font-size: 100%; }
 h1{ float: left; padding: 10px; font-weight: bold; font-size: 1.5em; color: #ffffff; text-align: left; }
 h1 a{ color: #ffffff; text-decoration: none; }
-h2{ font-weight: bold; font-size: 1.76em; color: #462D44; }
+h2{ font-weight: bold; font-size: 1.76em; color: #462D44; width: 100%; float: left; }
 h3{ font-weight: bold; font-size: 1.5em; color: #462D44; }
 p{ font-size: 0.875em; color: #462D44; }
 ul{ padding: 0; }
