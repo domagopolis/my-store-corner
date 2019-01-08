@@ -17,4 +17,8 @@ class Country extends Model
 	public function stores(){
 		return $this->hasMany('App\Store');
 	}
+
+	public function currencies(){
+		return $this->hasMany('App\Currency');
+	}
 }
