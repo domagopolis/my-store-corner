@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Trade extends Model
 {
-    public function stores(){
+	public function stores(){
 		return $this->belongsToMany('App\Store');
 	}
 }
