@@ -8,7 +8,6 @@
 {!! Form::open(['method' => 'get']) !!}
 	{{ Form::label('query', 'Search:') }}
 	{{ Form::search('query', null, ['class' => 'form-control']) }}
-	
 	{{ Form::button('Search', ['type' => 'submit']) }}
 {!! Form::close() !!}
 
