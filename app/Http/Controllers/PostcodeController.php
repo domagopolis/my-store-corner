@@ -7,6 +7,7 @@ use App\Country;
 use App\State;
 use App\Postcode;
 use App\Trade;
+use App\Store;
 
 class PostcodeController extends Controller
 {
@@ -50,13 +51,25 @@ class PostcodeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($country_slug, $state_slug, $postcode_slug)
-    {
-        $country = Country::where('slug', '=', $country_slug)->first();
-        $state = State::where('slug', '=', $state_slug)->where('country_id', '=', $country->id)->first();
-        $postcode = Postcode::where('slug', '=', $postcode_slug)->where('state_id', '=', $state->id)->first();
+    {   
+        $postcode = Postcode::whereHas('state', function($query) use ($state_slug, $country_slug){
+            $query
+            ->where('slug', '=', $state_slug)
+            ->whereHas('country', function($query) use ($country_slug){
+                $query->where('slug', '=', $country_slug);
+            });
+        })
+        ->where('slug', '=', $postcode_slug)
+        ->first();
+        
         $trades = Trade::orderBy('title')->get();
 
-        return view('postcodes.show')->withPostcode($postcode)->withTrades($trades);
+        $stores = Store::where('postcode_id', '=', $postcode->id)
+        ->inRandomOrder()
+        ->limit(4)
+        ->get();
+
+        return view('postcodes.show')->withPostcode($postcode)->withTrades($trades)->withStores($stores);
     }
 
     /**

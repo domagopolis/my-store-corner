@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Country;
 use App\State;
+use App\Store;
 
 class StateController extends Controller
 {
@@ -42,16 +43,28 @@ class StateController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  string  $coutry_slug
+     * @param  string  $country_slug
      * @param  string  $state_slug
      * @return \Illuminate\Http\Response
      */
     public function show($country_slug, $state_slug)
     {
-        $country = Country::where('slug', '=', $country_slug)->first();
-        $state = State::where('slug', '=', $state_slug)->where('country_id', '=', $country->id)->first();
+        $state = State::whereHas('country', function($query) use ($country_slug){
+            $query->where('slug', '=', $country_slug);
+        })
+        ->where('slug', '=', $state_slug)
+        ->first();
 
-        return view('states.show')->withState($state);
+        $stores = Store::whereHas('postcode', function($query) use ($state){
+            $query->whereHas('state', function($query) use ($state){
+                $query->where('id', '=', $state->id );
+            });
+        })
+        ->inRandomOrder()
+        ->limit(4)
+        ->get();
+
+        return view('states.show')->withState($state)->withStores($stores);
     }
 
     /**

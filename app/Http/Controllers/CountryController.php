@@ -47,8 +47,19 @@ class CountryController extends Controller
      */
     public function show($country_slug)
     {
-        $country = Country::where('slug', '=', $country_slug)->first();
-        $stores = Store::inRandomOrder()->limit(4)->get();
+        $country = Country::where('slug', '=', $country_slug)
+            ->first();
+
+        $stores = Store::whereHas('postcode', function($query) use ($country){
+            $query->whereHas('state', function($query) use ($country){
+                $query->whereHas('country', function($query) use ($country){
+                    $query->where('id', '=', $country->id );
+                });
+            });
+        })
+        ->inRandomOrder()
+        ->limit(4)
+        ->get();
 
         return view('countries.show')->withCountry($country)->withStores($stores);
     }

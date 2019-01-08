@@ -52,10 +52,21 @@ class TradeController extends Controller
      */
     public function show($country_slug, $state_slug, $postcode_slug, $trade_slug)
     {
-        $country = Country::where('slug', '=', $country_slug)->first();
-        $state = State::where('slug', '=', $state_slug)->where('country_id', '=', $country->id)->first();
-        $postcode = Postcode::where('slug', '=', $postcode_slug)->where('state_id', '=', $state->id)->first();
-        $trade = Trade::where('slug', '=', $trade_slug)->with(['stores' => function($query) use ($postcode){ $query->where('postcode_id', '=', $postcode->id); }])->first();
+        $postcode = Postcode::whereHas('state', function($query) use ($state_slug, $country_slug){
+            $query
+            ->where('slug', '=', $state_slug)
+            ->whereHas('country', function($query) use ($country_slug){
+                $query->where('slug', '=', $country_slug);
+            });
+        })
+        ->where('slug', '=', $postcode_slug)
+        ->first();
+        
+        $trade = Trade::where('slug', '=', $trade_slug)
+        ->with(['stores' => function($query) use ($postcode){ 
+            $query->where('postcode_id', '=', $postcode->id); 
+        }])
+        ->first();
 
         return view('trades.show')->withTrade($trade)->withPostcode($postcode);
     }
