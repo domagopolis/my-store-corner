@@ -11,6 +11,8 @@ class StorePagesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+      factory(App\StorePage::class, 10)->create()->each(function($s) {
+          ;
+      });
     }
 }

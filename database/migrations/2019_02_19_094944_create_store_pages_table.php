@@ -15,6 +15,13 @@ class CreateStorePagesTable extends Migration
     {
         Schema::create('store_pages', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('store_id')->unsigned();
+            $table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade');
+            $table->string('title', 100);
+            $table->string('slug', 100);
+            $table->string('meta_keywords', 100);
+            $table->text('meta_description');
+            $table->text('content');
             $table->timestamps();
         });
     }
