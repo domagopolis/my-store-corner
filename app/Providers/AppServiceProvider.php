@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace MyStoreCorner\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

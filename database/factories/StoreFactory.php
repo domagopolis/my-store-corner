@@ -2,9 +2,9 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Store::class, function (Faker $faker) {
+$factory->define(MyStoreCorner\Store::class, function (Faker $faker) {
     return [
-        'postcode_id' => App\Postcode::all()->random()->id,
+        'postcode_id' => MyStoreCorner\Postcode::all()->random()->id,
         'username' => $faker->unique()->userName,
         'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm',
         'name' => $faker->company,

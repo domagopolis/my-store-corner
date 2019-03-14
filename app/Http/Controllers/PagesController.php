@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace MyStoreCorner\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use App\Country;
-use App\Store;
+use MyStoreCorner\Country;
+use MyStoreCorner\Store;
 
 class PagesController extends Controller
 {

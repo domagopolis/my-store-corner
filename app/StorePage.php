@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace MyStoreCorner;
 
 use Illuminate\Database\Eloquent\Model;
 
 class StorePage extends Model
 {
   public function store(){
-    return $this->belongsTo('App\Store');
+    return $this->belongsTo('MyStoreCorner\Store');
   }
 }

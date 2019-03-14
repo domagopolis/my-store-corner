@@ -1,20 +1,20 @@
 <?php
 
-namespace App;
+namespace MyStoreCorner;
 
 use Illuminate\Database\Eloquent\Model;
 
 class State extends Model
 {
 	public function country(){
-		return $this->belongsTo('App\Country');
+		return $this->belongsTo('MyStoreCorner\Country');
 	}
 
 	public function postcodes(){
-		return $this->hasMany('App\Postcode')->orderBy('name');
+		return $this->hasMany('MyStoreCorner\Postcode')->orderBy('name');
 	}
 
 	public function stores(){
-		return $this->hasMany('App\Store');
+		return $this->hasMany('MyStoreCorner\Store');
 	}
 }

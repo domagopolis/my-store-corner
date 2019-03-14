@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace MyStoreCorner\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Country;
-use App\State;
-use App\Store;
+use MyStoreCorner\Country;
+use MyStoreCorner\State;
+use MyStoreCorner\Store;
 
 class StateController extends Controller
 {

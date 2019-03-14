@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace MyStoreCorner\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Country;
-use App\Store;
+use MyStoreCorner\Country;
+use MyStoreCorner\Store;
 
 class CountryController extends Controller
 {

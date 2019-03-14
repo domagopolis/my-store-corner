@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace MyStoreCorner;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
     public function currencies(){
-		return $this->belongsToMany('App\Currency');
+		return $this->belongsToMany('MyStoreCorner\Currency');
 	}
 }

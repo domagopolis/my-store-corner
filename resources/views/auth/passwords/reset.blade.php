@@ -1,25 +1,18 @@
 @extends('layouts.app')
 
-@section('title', '| Register')
+@section('title', '| Reset Password')
 
 @section('content')
-<h2>Register</h2>
+<h2>Reset Password</h2>
 
-<form method="POST" action="{{ route('register') }}">
+<form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
     {{ csrf_field() }}
 
-    <p>
-        <label for="name">Name</label>
-        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-    </p>
-
-    @if ($errors->has('name'))
-        <p class="error">{{ $errors->first('name') }}</p>
-    @endif
+    <input type="hidden" name="token" value="{{ $token }}">
 
     <p>
         <label for="email">E-Mail Address</label>
-        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
+        <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
     </p>
 
     @if ($errors->has('email'))
@@ -27,7 +20,7 @@
     @endif
 
     <p>
-        <label for="password">Password</label>
+        <label for="password" class="col-md-4 control-label">Password</label>
         <input id="password" type="password" class="form-control" name="password" required>
     </p>
 
@@ -40,8 +33,12 @@
         <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
     </p>
 
-    <p>
-        <button type="submit">Register</button>
+    @if ($errors->has('password_confirmation'))
+        <p class="error">{{ $errors->first('password_confirmation') }}</p>
+    @endif
+
+    <p class="form-group">
+        <button type="submit" class="btn btn-primary">Reset Password</button>
     </p>
 </form>
 @endsection

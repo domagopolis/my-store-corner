@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace MyStoreCorner\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Country;
-use App\State;
-use App\Postcode;
-use App\Trade;
-use App\Store;
+use MyStoreCorner\Country;
+use MyStoreCorner\State;
+use MyStoreCorner\Postcode;
+use MyStoreCorner\Trade;
+use MyStoreCorner\Store;
 
 class PostcodeController extends Controller
 {

@@ -1,24 +1,24 @@
 <?php
 
-namespace App;
+namespace MyStoreCorner;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
 	public function states(){
-		return $this->hasMany('App\State');
+		return $this->hasMany('MyStoreCorner\State');
 	}
 
 	public function postcodes(){
-		return $this->hasMany('App\Postcode');
+		return $this->hasMany('MyStoreCorner\Postcode');
 	}
 
 	public function stores(){
-		return $this->hasMany('App\Store');
+		return $this->hasMany('MyStoreCorner\Store');
 	}
 
 	public function currencies(){
-		return $this->hasMany('App\Currency');
+		return $this->hasMany('MyStoreCorner\Currency');
 	}
 }

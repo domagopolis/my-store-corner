@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Product::class, function (Faker $faker) {
+$factory->define(MyStoreCorner\Product::class, function (Faker $faker) {
 	$faker = \Faker\Factory::create();
 	$faker->addProvider(new \Bezhanov\Faker\Provider\Commerce($faker));
 	$productName = $faker->productName;

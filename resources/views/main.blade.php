@@ -7,16 +7,18 @@
         <div id="main_body">
             <div id="banner">
                 <h1>
-                    <a href="">My Store Corner @yield('subheading')</a>
+                    <a href="">{{ config('app.name', 'Laravel') }} @yield('subheading')</a>
                     <span class="desc">Your local business directory</span>
                 </h1>
                 <ul>
+                    @guest
                     <li>
                         <a href="/register" class="button" title="Register your store quickly then set up your catalogue from your account page">Add Your Store</a>
                     </li>
                     <li>
                         <a href="/login" class="button" title="Login directly to your account page">Store Login</a>
                     </li>
+                    @endguest
                 </ul>
             </div>
             @include('partials._nav')

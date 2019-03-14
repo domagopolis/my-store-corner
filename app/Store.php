@@ -1,20 +1,20 @@
 <?php
 
-namespace App;
+namespace MyStoreCorner;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Store extends Model
 {
 	public function postcode(){
-		return $this->belongsTo('App\Postcode');
+		return $this->belongsTo('MyStoreCorner\Postcode');
 	}
 
 	public function trades(){
-		return $this->belongsToMany('App\Trade');
+		return $this->belongsToMany('MyStoreCorner\Trade');
 	}
 
 	public function store_pages(){
-		return $this->hasMany('App\StorePage');
+		return $this->hasMany('MyStoreCorner\StorePage');
 	}
 }

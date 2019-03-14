@@ -1,16 +1,16 @@
 <?php
 
-namespace App;
+namespace MyStoreCorner;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Postcode extends Model
 {
 	public function state(){
-		return $this->belongsTo('App\State');
+		return $this->belongsTo('MyStoreCorner\State');
 	}
 
 	public function stores(){
-		return $this->hasMany('App\Store');
+		return $this->hasMany('MyStoreCorner\Store');
 	}
 }
