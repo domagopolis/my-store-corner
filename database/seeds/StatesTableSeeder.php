@@ -10,13 +10,13 @@ class StatesTableSeeder extends Seeder
 		$this->sql = base_path().'/database/seeds/sql/states.sql';
 	}
 
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
+	/**
+	 * Run the database seeds.
+	 *
+	 * @return void
+	 */
+	public function run()
+	{
 		DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
 		// Recommended when importing larger CSVs
@@ -28,5 +28,5 @@ class StatesTableSeeder extends Seeder
 		DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
 		DB::unprepared(file_get_contents($this->sql));
-    }
+	}
 }
