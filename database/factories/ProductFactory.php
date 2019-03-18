@@ -7,9 +7,9 @@ $factory->define(MyStoreCorner\Product::class, function (Faker $faker) {
 	$faker->addProvider(new \Bezhanov\Faker\Provider\Commerce($faker));
 	$productName = $faker->productName;
 
-    return [
-        'name' => $productName,
-        'short_name' => $productName,
-        'sku_number' => $faker->numberBetween(1000,9999),
-    ];
+	return [
+		'name' => $productName,
+		'short_name' => $productName,
+		'sku_number' => $faker->numberBetween(1000,9999),
+	];
 });

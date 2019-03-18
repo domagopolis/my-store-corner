@@ -11,8 +11,8 @@ class StoresTableSeeder extends Seeder
      */
 	public function run()
 	{
-		factory(App\Store::class, 100)->create()->each(function($s) {
-            $s->trades()->sync(App\Trade::inRandomOrder()->limit(3)->get());
-        });
+		factory(MyStoreCorner\Store::class, 100)->create()->each(function($s) {
+        	$s->trades()->sync(MyStoreCorner\Trade::inRandomOrder()->limit(3)->get());
+    	});
 	}
 }

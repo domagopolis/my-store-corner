@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ProductsTableSeeder extends Seeder
+class PostcodesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,7 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(MyStoreCorner\Product::class, 100)->create()->each(function($s) {
+		factory(MyStoreCorner\Postcode::class, 1000)->create()->each(function($s) {
             ;
         });
     }
