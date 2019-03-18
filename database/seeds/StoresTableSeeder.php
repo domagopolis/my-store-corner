@@ -13,6 +13,8 @@ class StoresTableSeeder extends Seeder
 	{
 		factory(MyStoreCorner\Store::class, 100)->create()->each(function($s) {
         	$s->trades()->sync(MyStoreCorner\Trade::inRandomOrder()->limit(3)->get());
+
+			$s->store_pages()->saveMany(factory(MyStoreCorner\StorePage::class, 5)->make());
     	});
 	}
 }
