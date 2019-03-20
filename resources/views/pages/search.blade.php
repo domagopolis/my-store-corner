@@ -1,4 +1,4 @@
-@extends('main')
+@extends('layouts.app')
 
 @section('title', '| Search')
 
@@ -6,9 +6,9 @@
 <div id="sub-content">
 <h2>Search</h2>
 {!! Form::open(['method' => 'get']) !!}
-	{{ Form::label('query', 'Search:') }}
-	{{ Form::search('query', null, ['class' => 'form-control']) }}
-	{{ Form::button('Search', ['type' => 'submit']) }}
+    {{ Form::label('query', 'Search:') }}
+    {{ Form::search('query', null, ['class' => 'form-control']) }}
+    {{ Form::button('Search', ['type' => 'submit']) }}
 {!! Form::close() !!}
 
 @if($query)
@@ -17,7 +17,7 @@
 </div>
 @if($query)
 <div id="right-sidebar">
-	<h2>Filter</h2>
+    <h2>Filter</h2>
 </div>
 @endif
 @endsection
