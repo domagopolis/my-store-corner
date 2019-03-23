@@ -8,6 +8,7 @@ $factory->define(MyStoreCorner\Product::class, function (Faker $faker) {
     $productName = $faker->productName;
 
     return [
+        'store_id' => MyStoreCorner\Store::all()->random()->id,
         'name' => $productName,
         'short_name' => $productName,
         'sku_number' => $faker->numberBetween(1000,9999),

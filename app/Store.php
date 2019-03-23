@@ -14,6 +14,10 @@ class Store extends Model
 		return $this->belongsToMany('MyStoreCorner\Trade');
 	}
 
+    public function products(){
+        return $this->hasMany('MyStoreCorner\Product');
+    }
+
 	public function store_pages(){
 		return $this->hasMany('MyStoreCorner\StorePage');
 	}
