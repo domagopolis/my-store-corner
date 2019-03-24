@@ -35,8 +35,8 @@ class RemoveStoreIds extends Migration
     public function down()
     {
         Schema::table('stores', function (Blueprint $table) {
-            $table->integer('country_id')->unsigned()->after('id');
-            $table->integer('state_id')->unsigned()->after('country_id');
+            $table->integer('country_id')->nullable()->unsigned()->after('id');
+            $table->integer('state_id')->nullable()->unsigned()->after('country_id');
         });
 
         Schema::table('stores', function ($table){

@@ -16,7 +16,7 @@ class RemovePostcodeIds extends Migration
         Schema::table('postcodes', function ($table){
             $table->dropForeign(['country_id']);
         });
-        
+
         Schema::table('postcodes', function (Blueprint $table) {
             $table->dropColumn('country_id');
         });
@@ -30,7 +30,7 @@ class RemovePostcodeIds extends Migration
     public function down()
     {
         Schema::table('postcodes', function (Blueprint $table) {
-            $table->integer('country_id')->unsigned()->after('id');
+            $table->integer('country_id')->nullable()->unsigned()->after('id');
         });
 
         Schema::table('postcodes', function ($table){
