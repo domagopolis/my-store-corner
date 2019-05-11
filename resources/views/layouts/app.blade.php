@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     @yield('stylesheets')
+    @include('partials._ga')
 </head>
 <body>
     <div id="main_body">
