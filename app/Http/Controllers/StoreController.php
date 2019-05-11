@@ -8,6 +8,11 @@ use MyStoreCorner\Store;
 
 class StoreController extends Controller
 {
+    public function __construct()
+    {
+        //$this->middleware('auth', ['except' => 'store']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +30,7 @@ class StoreController extends Controller
      */
     public function create()
     {
-        //
+        return view('stores.create');
     }
 
     /**
@@ -36,7 +41,28 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, array(
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'business_registration_number' => 'required|max:255',
+            'website' => 'url|max:255',
+            'facebook_page_url' => 'url|max:255',
+            'linkedin_page_url' => 'url|max:255',
+            ));
+
+        $store = new Store();
+        $store->user_id = Auth::id();
+        $store->name = $request->name;
+        $store->email = $request->email;
+        $store->phone = $request->phone;
+        $store->mobile = $request->mobile;
+        $store->address = $request->address;
+        $store->business_registration_number = $request->business_registration_number;
+        $store->website = $request->website;
+        $store->facebook_page_url = $request->facebook_page_url;
+        $store->twitter_username = $request->twitter_username;
+        $store->linkedin_page_url = $request->linkedin_page_url;
+        $store->save();
     }
 
     /**
