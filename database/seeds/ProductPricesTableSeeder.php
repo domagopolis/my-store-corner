@@ -11,7 +11,7 @@ class ProductPricesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(MyStoreCorner\ProductPrice::class, 100)->create()->each(function($s) {
+        factory(MyStoreCorner\ProductPrice::class, 100)->create()->each(function($pp) {
             ;
         });
     }

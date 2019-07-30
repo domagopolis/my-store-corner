@@ -20,8 +20,6 @@ class CreateCountriesTable extends Migration
             $table->decimal('latitude', 9, 6)->default(0);
             $table->decimal('longitude', 9, 6)->default(0);
             $table->integer('zoom')->default(0);
-            $table->enum('measurement', ['metric', 'imperial'])->default('metric');
-            $table->boolean('display_enabled');
         });
     }
 
