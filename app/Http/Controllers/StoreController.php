@@ -3,6 +3,8 @@
 namespace MyStoreCorner\Http\Controllers;
 
 use Illuminate\Http\Request;
+use MyStoreCorner\Country;
+use MyStoreCorner\State;
 use MyStoreCorner\Trade;
 use MyStoreCorner\Store;
 
@@ -30,7 +32,9 @@ class StoreController extends Controller
      */
     public function create()
     {
-        return view('stores.create');
+        $countries = Country::pluck('name', 'id');
+
+        return view('stores.create')->withCountries($countries);
     }
 
     /**
@@ -87,7 +91,11 @@ class StoreController extends Controller
      */
     public function edit($id)
     {
-        //
+        $store = Store::find($id);
+        $countries = Country::pluck('name', 'id');
+        $states = State::where('country_id', '=', $store->postcode->state->country->id)->pluck('name', 'id');
+
+        return view('stores.edit')->withStore($store)->withCountries($countries)->withStates($states);
     }
 
     /**
@@ -99,7 +107,13 @@ class StoreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $store = Store::find($id);
+
+        $store->name = $request->input('name');
+
+        $store->save();
+
+        return redirect()->route('stores.show', $store->id);
     }
 
     /**

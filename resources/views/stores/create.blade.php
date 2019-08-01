@@ -18,6 +18,10 @@
     {{ Form::label('mobile', 'Mobile:') }}
     {{ Form::tel('mobile', null, array('class' => 'form-control', 'maxlength' => '255')) }}
 
+    {{ Form::label('country', 'Country:') }}
+    {{ Form::select('country', $countries, null, array('class' => 'form-control', 'maxlength' => '255')) }}
+
+
     {{ Form::label('address', 'Address:') }}
     {{ Form::text('address', null, array('class' => 'form-control', 'maxlength' => '255')) }}
 
