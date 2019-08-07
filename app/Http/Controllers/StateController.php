@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use MyStoreCorner\Country;
 use MyStoreCorner\State;
 use MyStoreCorner\Store;
+use MyStoreCorner\Http\Resources\State as StateResource;
 
 class StateController extends Controller
 {
@@ -14,9 +15,11 @@ class StateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($country_id)
     {
-        //
+        $states = State::select('id', 'name')->where('country_id', '=', $country_id)->get();
+
+        return StateResource::collection($states);
     }
 
     /**

@@ -8,6 +8,7 @@ use MyStoreCorner\State;
 use MyStoreCorner\Postcode;
 use MyStoreCorner\Trade;
 use MyStoreCorner\Store;
+use MyStoreCorner\Http\Resources\Postcode as PostcodeResource;
 
 class PostcodeController extends Controller
 {
@@ -16,9 +17,11 @@ class PostcodeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($state_id)
     {
-        //
+        $postcodes = Postcode::select('id', 'name')->where('state_id', '=', $state_id)->get();
+
+        return PostcodeResource::collection($postcodes);
     }
 
     /**
@@ -51,7 +54,7 @@ class PostcodeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($country_slug, $state_slug, $postcode_slug)
-    {   
+    {
         $postcode = Postcode::whereHas('state', function($query) use ($state_slug, $country_slug){
             $query
             ->where('slug', '=', $state_slug)
@@ -61,7 +64,7 @@ class PostcodeController extends Controller
         })
         ->where('slug', '=', $postcode_slug)
         ->first();
-        
+
         $trades = Trade::orderBy('title')->get();
 
         $stores = Store::where('postcode_id', '=', $postcode->id)
